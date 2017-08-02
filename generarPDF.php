@@ -117,7 +117,7 @@ class MYPDF extends TCPDF {
 
 		$this->SetFillColor(0, 0, 0, 0);
 
-		$this->Rect(11, 17, 194, 247, 'DF', $border_style);
+		$this->Rect(5, 15, 206, 250, 'DF', $border_style);
 
 
 
@@ -360,7 +360,7 @@ $pdf->SetDrawColor(255, 255, 255, 0);
 
 $pdf->SetFillColor(0, 0, 0, 0);
 
-$pdf->Rect(11, 10, 194, 263, 'DF', $border_style);
+$pdf->Rect(5, 5, 206, 270, 'DF', $border_style);
 
 
 

@@ -360,7 +360,7 @@ $pdf->SetDrawColor(255, 255, 255, 0);
 
 $pdf->SetFillColor(0, 0, 0, 0);
 
-$pdf->Rect(11, 10, 194, 263, 'DF', $border_style);
+$pdf->Rect(5, 5, 205, 270, 'DF', $border_style);
 
 
 

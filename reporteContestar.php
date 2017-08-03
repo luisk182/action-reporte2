@@ -430,9 +430,19 @@ tinyMCE.init({
         theme_advanced_resizing : false,
 		spellchecker_languages : "+Spanish=es,English=en",
 		init_instance_callback : function() {
-		tinyMCE.activeEditor.controlManager.setActive('spellchecker', true);
+		//tinyMCE.activeEditor.controlManager.setActive('spellchecker', true);
+       
 			tinymce.execCommand('mceSpellCheck', true);
+            var obetnerTitulo = $("#titulo").text();
+            
+            if(obetnerTitulo == "Tus Creencias"){
+                tinymce.execCommand('insertOrderedList', true);
+            }
+            
 		},
+
+		
+          
 		
         // Example content CSS (should be your site CSS)
         content_css : "css/example.css",
@@ -657,7 +667,7 @@ if($_GET['t']=="m") {
 	<input type="submit" value="Guardar informaci&oacute;n" />
 	</div>
 	<!--IMPRIME NOMBRE DE LA META-->
-	<h1><?php echo $rowMeta['nombre']; ?></h1>
+	<h1 id="titulo"><?php echo $rowMeta['nombre']; ?></h1>
 	
 	<?php echo $rowMeta['vision']; ?>
 	

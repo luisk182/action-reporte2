@@ -470,11 +470,26 @@ $pdf->setPrintFooter(true);
 
 // ---------------------------------------------------------METAS
 
+$sqlcheck="select p.id AS id, p.cardinalidad, p.vision, rm.respuesta 
+FROM preguntas p, respuestasMetas rm 
+WHERE rm.idMeta=".$x." 
+AND idReporte=".$_GET['idReporte']." 
+AND idUsuario=".$_GET['idU']." 
+AND p.id = rm.idPregunta 
+AND rm.respuesta<>'' 
+AND rm.visible=1 
+UNION 
+SELECT po.IdPreguntaOpcional AS Pid,  100 AS cardinalidad, po.pregunta, po.respuesta 
+FROM preguntasopcionales po 
+WHERE po.idmeta = ".$x." 
+AND po.idreporte = ".$_GET['idReporte']." 
+AND po.idusuario = ".$_GET['idU']."  
+AND pregunta <>  '' 
+order By  cardinalidad ASC ";
 
+if($sqlcheck->num_rows !
 
 for($x=1;$x<=5;$x++) {
-
-
 
 $html="<style>
 
